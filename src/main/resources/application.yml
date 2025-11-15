@@ -6,4 +6,7 @@ spring:
     name: orchestrator-service
 
   kafka:
-    bootstrap-servers: kafka:29092
+    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+    consumer:
+      group-id: orchestrator-service-group
+      auto-offset-reset: latest
